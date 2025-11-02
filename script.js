@@ -2,22 +2,21 @@ const display = document.getElementById("display");
 const themeSwitch = document.getElementById("themeSwitch");
 let memory = 0;
 
-// Append value to display
+
 function appendValue(value) {
   display.value += value;
 }
 
-// Clear all
+
 function clearDisplay() {
   display.value = "";
 }
 
-// Delete last character
 function deleteLast() {
   display.value = display.value.slice(0, -1);
 }
 
-// Calculate result safely
+
 function calculateResult() {
   try {
     const result = eval(display.value.replace("÷", "/").replace("×", "*"));
@@ -27,7 +26,7 @@ function calculateResult() {
   }
 }
 
-// Scientific operations
+
 function squareRoot() {
   display.value = Math.sqrt(parseFloat(display.value)) || "";
 }
@@ -48,7 +47,7 @@ function toggleSign() {
   }
 }
 
-// Memory functions
+
 function memoryAdd() {
   memory += parseFloat(display.value) || 0;
 }
@@ -65,12 +64,12 @@ function memoryClear() {
   memory = 0;
 }
 
-// Dark / Light mode
+
 themeSwitch.addEventListener("change", () => {
   document.body.classList.toggle("dark");
 });
 
-// Keyboard input support
+
 document.addEventListener("keydown", (e) => {
   const key = e.key;
 
